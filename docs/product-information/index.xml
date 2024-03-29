@@ -1,0 +1,728 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>变频器厂家-山东临沂森阔机电有限公司 – 第二章 产品信息</title>
+    <link>https://www.lyskjd.com/docs/product-information/</link>
+    <description>Recent content in 第二章 产品信息 on 变频器厂家-山东临沂森阔机电有限公司</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 2016-2024 山东临沂森阔机电有限公司 版权所有　备案号：&lt;a href=&#34;https://beian.miit.gov.cn/&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;鲁ICP备17034385号-2&lt;/a&gt;</copyright>
+    
+	  <atom:link href="https://www.lyskjd.com/docs/product-information/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>2.1 技术规范表</title>
+      <link>https://www.lyskjd.com/docs/product-information/technical-specifications-table/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lyskjd.com/docs/product-information/technical-specifications-table/</guid>
+      <description>
+        
+        
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;项目&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;规格&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;控制特性&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;控制方式&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;无速度传感器矢量控制（SVC）&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;V/F控制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;启动转矩&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.5Hz/150%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.5Hz/100%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;调速范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1：100&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1：50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳速精度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;±0.5%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;±1%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;载波频率&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.5kHz~16kHz;可根据负载特性，自动调整载波频率&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;过载能力&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;G型机：150% 额定电流60s,220%额定电流1s &lt;/br&gt;  P型机：120% 额定电流60s,150%额定电流1s&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;转矩提升&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.0%自动转矩提升；手动转矩提升0.1%~30%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输入输出&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输入电压范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;220V/380V； 波动范围：±15%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输入频率范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;50/60Hz； 波动范围：±5%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输出电压范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0~输入电压，误差小于5%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输出频率范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SVC：0~320Hz； V/F:0-3200Hz&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;运行控制&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;运行命令通道&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3种通道：操作面板给定、控制端子给定、串行通讯口给定。可通过多种方式切换。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;频率源&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;数字给定、面板电位器给定、模拟电压给定、模拟电流给定、串口通讯给定等。可通过多种方式切换。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;辅助频率源&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;多种辅助频率源。可进行频率合成、频率微调。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输入端子&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7个数字输入端子&lt;/br&gt; 2个模拟量输入端子&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输出端子&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2个开路集电极输出端子&lt;/br&gt; 2个继电器输出端子 &lt;/br&gt; 2个模拟量输出端子&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;基本功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;直流制动功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;制动时间：0.0s~100.0s，制动动作电流值：0.0%~100.0%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;V/F曲线&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3种方式：直线型、多点型、平方型&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;加减速曲线&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;直线或S曲线加减速方式；四组加减速时间；加减速时间范围：0.0~6500.0s&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;简易PLC、多段速&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;通过内置PLC或控制端子实现最多16段速运行&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内置PID&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;可方便实现过程控制闭环控制系统&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;AVR功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;当电网电压变化时，能自动保持输出电压恒定&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;过压过流失速&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;对运行期间电流电压自动限制，防止频繁过流过压跳闸&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;快速限流功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;最大限度减小过流故障，提高系统稳定性&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;转矩限定与控制&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;“挖土机”特性，对运行期间转矩自动限制，防止频繁过流跳闸&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;上电外围设备安全自检&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;可实现上电对外围设备进行安全检测如接地、短路等&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定时控制功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;设定时间范围0h~65535h&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;保护功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输出缺相保护、过流保护、过压保护、欠压保护、过热保护、过载保护、上电继电器故障检测等&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;显示与键盘操作&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;LED显示&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5位LED显示&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;参数锁定功能&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;设置参数只读控制，以防误操作&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MF.K键&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;可编程键：命令通道切换/正反转运行/点动运行功能选择/菜单模式切换&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;使用环境&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;使用场所&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;室内，不受阳光直晒，无尘埃、腐蚀性气体、可燃性气体、油雾、水蒸汽、滴水或盐份等&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;海拔高度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;低于1000m；高于1000m以上时，要降额使用，每升高100m,需要降额1%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;环境温度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-10℃~40℃，温度超过40℃时需要降额使用，环境温度每升高1℃ ，需要降额1%，最高使用环境温度为50℃&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;湿度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≤95%RH，避免结霜&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;振动&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;振动加速度小于0.6g&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;存储温度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-25℃~+60℃&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;探索这些文档以便了解更多内容：&lt;/p&gt;
+
+
+&lt;div class=&#34;hextra-cards mt-4 gap-4 grid not-prose&#34; style=&#34;--rows: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://item.taobao.com/item.htm?ft=t&amp;amp;id=771441899583&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z&#34;/&gt;&lt;/svg&gt;立即购买高性能矢量变频器&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/docs/table-of-contents/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器使用说明书目录&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/blog/faq/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器常见问题解答&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>2.2 产品铭牌</title>
+      <link>https://www.lyskjd.com/docs/product-information/product-aluminum-plate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lyskjd.com/docs/product-information/product-aluminum-plate/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://www.lyskjd.com/images/cpmp.jpg&#34; title=&#34;矢量变频器产品铭牌&#34; alt=&#34;产品铭牌&#34; loading=&#34;lazy&#34; /&gt;
+    &lt;figcaption&gt;矢量变频器产品铭牌&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;hextra-cards mt-4 gap-4 grid not-prose&#34; style=&#34;--rows: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://item.taobao.com/item.htm?ft=t&amp;amp;id=771441899583&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z&#34;/&gt;&lt;/svg&gt;立即购买高性能矢量变频器&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/docs/table-of-contents/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器使用说明书目录&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/blog/faq/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器常见问题解答&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>2.3 型号说明</title>
+      <link>https://www.lyskjd.com/docs/product-information/model-description/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lyskjd.com/docs/product-information/model-description/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://www.lyskjd.com/images/xh.jpg&#34; title=&#34;矢量变频器型号说明&#34; alt=&#34;型号说明&#34; loading=&#34;lazy&#34; /&gt;
+    &lt;figcaption&gt;矢量变频器型号说明&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;字段&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;标识&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;标识说明&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;具体内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;产品系列&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;①&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;产品系列&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;通用矢量变频器系列为8000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;额定功率1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;②&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;G型机功率范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5R5-5.5KW，R为小数点&lt;/br&gt;G-恒转矩负载 &lt;/br&gt;B-内置制动单元&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;额定功率2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;③&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;P型机功率范围&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7R5-7.5KW，R为小数点&lt;/br&gt;P-变转矩负载 &lt;/br&gt;B-内置制动单元&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;输入电源&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;④&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;电源相数标识&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;S：单相；T：三相&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;电压等级&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;⑤&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;电压等级&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2：220VAC; 4: 380VAC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;hextra-cards mt-4 gap-4 grid not-prose&#34; style=&#34;--rows: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://item.taobao.com/item.htm?ft=t&amp;amp;id=771441899583&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z&#34;/&gt;&lt;/svg&gt;立即购买高性能矢量变频器&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/docs/table-of-contents/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器使用说明书目录&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/blog/faq/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器常见问题解答&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>2.4 产品选型规格表</title>
+      <link>https://www.lyskjd.com/docs/product-information/product-selection-specification-table/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lyskjd.com/docs/product-information/product-selection-specification-table/</guid>
+      <description>
+        
+        
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;变频器型号G/P&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;额定功率(kw)&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;电源容量 (KVA)&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;输入电流(A)&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;输出电流(A)&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;适配电机G/P(KW)&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;适配电机G/P(HP)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;R75GB-S2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;8.2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1R5GB-S2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;14&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2R2GB-S2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2.2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;23&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;9.6&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2.2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;R75GB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3.4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2.1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0.75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1R5GB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3.8&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2R2GB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2.2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.8&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2.2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;004GB/5R5PB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4/5.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.9/8.9&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10.5/14.6&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;9/13&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4/5.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.5/7.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5R5GB/7R5PB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.5/7.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;8.9/11&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;14.6/20.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;13/17&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.5/7.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7.5/10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7R5GB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;20.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;17&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;011GB/015PB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11/15&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;17/21&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;26/35&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;25/32&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11/15&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;15/20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;015GB/18R5PB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;15/18.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;21/24&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;35/38.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;32/37&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;15/18.5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;20/25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;018R5GB/022PB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;18.5/22&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;24/30&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;38.5/46&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;37/45&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;18.5/22&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;25/30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;022GB/030PB-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;22/30&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;30/40&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;46.5/62&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;45/60&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;22/30&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;30/40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;030G/037P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;30/37&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;40/57&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;62/76&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;60/75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;30/37&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;40/50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;037G/045P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;37/45&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;57/69&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;76/92&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;75/91&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;37/45&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;50/60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;045G/055P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;45/55&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;69/85&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;92/113&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;91/110&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;45/55&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;60/70&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;055G/075P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;55/75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;85/114&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;113/157&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;112/150&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;55/75&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;70/100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;075G/093P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;75/93&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;114/134&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;157/180&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;150/170&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;75/93&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;100/125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;093G/110P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;93/110&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;134/160&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;180/214&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;170/210&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;93/110&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;125/150&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;110G/132P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;110/132&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;160/192&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;214/256&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;210/253&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;110/132&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;150/180&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;132G/160P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;132/160&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;192/231&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;256/307&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;253/304&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;132/160&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;180/220&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;160G/185P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;160/185&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;231/245&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;307/345&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;304/340&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;160/185&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;220/250&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;185G/200P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;185/200&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;245/260&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;345/385&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;340/377&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;185/200&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;250/275&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;200G/220P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;200/220&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;260/280&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;385/430&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;377/426&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;200/220&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;275/300&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;220G/250P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;220/250&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;280/355&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;430/468&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;426/465&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;220/250&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;300/340&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;250G/280P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;250/280&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;355/396&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;468/525&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;465/520&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;250/280&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;340/380&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;280G/315P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;280/315&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;396/445&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;525/590&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;520/585&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;280/315&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;380/430&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;315G/355P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;315/355&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;445/500&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;590/665&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;585/650&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;315/355&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;430/480&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;355G/400P-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;355/400&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;500/565&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;665/785&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;650/725&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;355/400&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;480/545&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;400G-T4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;400&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;565&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;786&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;725&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;400&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;545&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;探索这些文档以便了解更多内容：&lt;/p&gt;
+
+
+&lt;div class=&#34;hextra-cards mt-4 gap-4 grid not-prose&#34; style=&#34;--rows: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://item.taobao.com/item.htm?ft=t&amp;amp;id=771441899583&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z&#34;/&gt;&lt;/svg&gt;立即购买高性能矢量变频器&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/docs/table-of-contents/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器使用说明书目录&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/blog/faq/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器常见问题解答&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>2.5 键盘托盘尺寸图</title>
+      <link>https://www.lyskjd.com/docs/product-information/keyboard-tray-dimensional-diagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lyskjd.com/docs/product-information/keyboard-tray-dimensional-diagram/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;https://www.lyskjd.com/images/jp.jpg&#34; alt=&#34;键盘实物图&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;变频器结构&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C系列托盘开孔尺寸&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;H系列托盘开孔尺寸&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;开孔尺寸图&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://www.lyskjd.com/images/cjp.jpg&#34; alt=&#34;C系列托盘开孔尺寸&#34; loading=&#34;lazy&#34; /&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://www.lyskjd.com/images/hjp.jpg&#34; alt=&#34;H系列托盘开孔尺寸&#34; loading=&#34;lazy&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;探索这些文档以便了解更多内容：&lt;/p&gt;
+
+
+&lt;div class=&#34;hextra-cards mt-4 gap-4 grid not-prose&#34; style=&#34;--rows: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://item.taobao.com/item.htm?ft=t&amp;amp;id=771441899583&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z&#34;/&gt;&lt;/svg&gt;立即购买高性能矢量变频器&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/docs/table-of-contents/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器使用说明书目录&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;href=&#34;https://www.lyskjd.com/blog/faq/&#34; &gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&#34;/&gt;&lt;/svg&gt;变频器常见问题解答&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

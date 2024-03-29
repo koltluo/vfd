@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+
+  <title>8.2 通讯数据地址定义 – 变频器厂家-山东临沂森阔机电有限公司</title>
+  <meta name="description" content="通讯数据可分为功能码数据、非功能码数据，后者包括运行命令、运行状态、运行参数、告警信息等。
+8.2.1 功能码数据 功能码数据为变频器的重要设置参数，有P组和A组功能参数，参数群组如下：
+功能码数据 数据范围 属性值 P组 P0、P1、P2、P3、P4、P5、P6、P7、P8、P9、PA、PB、PC、PD、PE、PF 可读写 A组 A0、A1、A2、A3、A4、A5、A6、A7、A8、A9、 AA、AB、AC、AD、AE、AF 可读写 功能码数据通讯地址定义如下：
+1、当为通讯读取功能码数据时，对于P0～PF、A0～AF组功能码数据，其通讯地址高十六位直接为功能组编号，低十六位直接为功能码在功能组中序号，举例如下：
+P0-16功能参数：其通讯地址为F010H，其中F0H代表P0组功能参数，10H代表功能组中序号16的十六进制数据格式。 AC-08功能参数：其通讯地址为AC08，其中ACH代表AC组功能参数，08H代表功能码在功能组中序号08的十六进制数据格式。
+2、当为通讯写入功能码数据时，对于PO～PF组功能码数据，其通讯地址高十六位，根据是否写入EEPROM，区分为00～0F或F0～FF，低十六位直接为功能码在功能组中序号，举例如下：
+写功能在参数P0-16：
+需要写入EEPROM时，其通讯地址为F010H，
+不需要写入EEPROM时，其通讯地址为0010H。
+3、当为通讯写入EEPROM数据时，，对于A0～AF组功能码数据，其通讯地址高十六位区分为10～4F或A0～AF，低十六位直接为功能码在功能组中序号，举例如下： 写功能参数AC-08： 需要写入EEPROM时，其通讯地址为AC08H，
+不需要写入EEPROM时，其通讯地址为4C08H。
+8.2.2 非功能码数据 非功能码数据 数据范围 属性值 状态数据 U组监视参数、变频器故障描述、变频器运行状态 可读 控制参数 控制命令、通讯设定值、数字输出端子控制、模拟输出AO1控制、模拟输出 、AO2控制、高速脉冲（FMP）输出控制、参数初始化 可写 8.2.3 状态数据 状态数据分为U组监视参数、变频器故障描述、变频器运行状态。
+1、U组参数监视参数
+U组监视数据描述见说明书相关U0组功能描述，其地址定义如下：
+U0～UF，其通讯地址高十六位为70～7F，低十六位为监视参数在组中的序号，举例如下： U0-11，其通讯地址为700BH。
+2、变频器故障描述
+通讯读取变频器故障时通讯地址固定为8000H，上位机通过读取该地址数据可以获取当前变频器故障代码，故障代码描述见第五章P9-14功能码 中定义。
+3、变频器运行状态 通讯读取变频器运行状态时，通讯地址因定为3000H，上位机通过读取该地焉数据，可以获取当前变频器运行状态信息，定义如下：
+变频器运行状态通讯地址 读取状态字定义 3000H 1：正转运行 2：反转运行 3：停机 8.2.4 控制参数 控制参数分为控制命令、数字输出端子控制、模拟输出AO1控制、模拟输出AO2控制、高速脉冲（FMP）输出控制。
+8.2.5 控制命令 在P0-02（命令源）选择为2：通讯控制时，上位机通过该通讯地址，可以实现对变频器的启停等相关命令控制，控制命令定义如下：
+控制命令通讯地址 命令功能 2000H 1：正转运行 2：反转运行 3：正转点动 4：反转点动 5：自由停机 6：减速停机 7：故障复位 8.2.6 通讯设定值 通讯设定值主要用于中频率源、转矩上限源、VF分离电压源、PID给定源、PID反馈源等选择为通讯给定时的给定数据，其通讯地址为1000H，上位机设定该通讯地址值时，其数据范围为-10000～10000，对应相对给定值-100.00%-100.00%.
+8.2.7 数字输出端子控制 当数字输出端子功能选择为20：通讯控制时，上位机通过该通讯地址，可以实现对变频器数字输出端子的控制，定义如下：
+数字输出端子控制通讯地址 命令内容 2001H BiT0：DO1输出控制 BiT1：DO2输出控制 BiT2：RELAY1输出控制 BiT3：RELAY2输出控制 BiT4：FMR输出控制BiT5：VDO1 BiT6：VDO2 BiT7：VDO3 BiT8：VDO4 BiT9：VDO5 8.2.8 模拟量输出AO1、AO2.高速脉冲输出FMP控制 当模拟量输出AO1、AO2，高速脉冲输出FMP输出功能选择为12：通讯设定时，上位机通过该通讯地址，可以实现对变频器模拟量、高速脉冲输出的控制，定义如下：
+输出端子 输出控制通讯地址 命令内容 AO1 2002H 0～7FFF表示0%～100% AO2 2003H 0～7FFF表示0%～100% FMP 2004H 0～7FFF表示0%～100% 8.2.9 参数初始化 当需要通过上位机实现对变频器的参数初始化操作时，需要使用该功能。 如果PP-00（用户密码）不为0，则首先需要通过进行密码校验，校验通过后，在30秒后，上位机进行参数初始化操作。
+通讯进行用户密码校验的通讯地址为1F00H，直接将正确的用户密码写入该地址，则可以完成密码校验。
+通讯进行参数初始化的地址为1F01H，其数据内容定义如下：
+参数初始化通讯地址 命令功能 1F01H 1：恢复出厂参数 2：清楚记录信息 4：恢复用户备份参数 501：备份用户当前参数 探索以下文档以便了解更多内容：" />
+  
+  
+    <link rel="canonical" href="https://www.lyskjd.com/docs/modbus-communication-protocol/communication-data-address-definition/" itemprop="url" />
+  
+
+  
+
+<meta property="og:title" content="8.2 通讯数据地址定义" />
+<meta property="og:description" content="通讯数据可分为功能码数据、非功能码数据，后者包括运行命令、运行状态、运行参数、告警信息等。
+8.2.1 功能码数据
+    功能码数据为变频器的重要设置参数，有P组和A组功能参数，参数群组如下：
+
+
+
+功能码数据
+数据范围
+属性值
+
+
+
+
+P组
+P0、P1、P2、P3、P4、P5、P6、P7、P8、P9、PA、PB、PC、PD、PE、PF
+可读写
+
+
+A组
+A0、A1、A2、A3、A4、A5、A6、A7、A8、A9、 AA、AB、AC、AD、AE、AF
+可读写
+
+
+
+功能码数据通讯地址定义如下：
+1、当为通讯读取功能码数据时，对于P0～PF、A0～AF组功能码数据，其通讯地址高十六位直接为功能组编号，低十六位直接为功能码在功能组中序号，举例如下：
+P0-16功能参数：其通讯地址为F010H，其中F0H代表P0组功能参数，10H代表功能组中序号16的十六进制数据格式。
+AC-08功能参数：其通讯地址为AC08，其中ACH代表AC组功能参数，08H代表功能码在功能组中序号08的十六进制数据格式。
+2、当为通讯写入功能码数据时，对于PO～PF组功能码数据，其通讯地址高十六位，根据是否写入EEPROM，区分为00～0F或F0～FF，低十六位直接为功能码在功能组中序号，举例如下：
+写功能在参数P0-16：
+需要写入EEPROM时，其通讯地址为F010H，
+不需要写入EEPROM时，其通讯地址为0010H。
+3、当为通讯写入EEPROM数据时，，对于A0～AF组功能码数据，其通讯地址高十六位区分为10～4F或A0～AF，低十六位直接为功能码在功能组中序号，举例如下： 
+写功能参数AC-08：
+需要写入EEPROM时，其通讯地址为AC08H，
+不需要写入EEPROM时，其通讯地址为4C08H。
+8.2.2 非功能码数据
+    
+
+
+非功能码数据
+数据范围
+属性值
+
+
+
+
+状态数据
+U组监视参数、变频器故障描述、变频器运行状态
+可读
+
+
+控制参数
+控制命令、通讯设定值、数字输出端子控制、模拟输出AO1控制、模拟输出 、AO2控制、高速脉冲（FMP）输出控制、参数初始化
+可写
+
+
+
+8.2.3 状态数据
+    状态数据分为U组监视参数、变频器故障描述、变频器运行状态。
+1、U组参数监视参数
+U组监视数据描述见说明书相关U0组功能描述，其地址定义如下：
+U0～UF，其通讯地址高十六位为70～7F，低十六位为监视参数在组中的序号，举例如下：   U0-11，其通讯地址为700BH。
+2、变频器故障描述
+通讯读取变频器故障时通讯地址固定为8000H，上位机通过读取该地址数据可以获取当前变频器故障代码，故障代码描述见第五章P9-14功能码 中定义。
+3、变频器运行状态
+通讯读取变频器运行状态时，通讯地址因定为3000H，上位机通过读取该地焉数据，可以获取当前变频器运行状态信息，定义如下：
+
+
+
+变频器运行状态通讯地址
+读取状态字定义
+
+
+
+
+3000H
+1：正转运行 2：反转运行 3：停机
+
+
+
+8.2.4 控制参数
+    控制参数分为控制命令、数字输出端子控制、模拟输出AO1控制、模拟输出AO2控制、高速脉冲（FMP）输出控制。
+8.2.5 控制命令
+    在P0-02（命令源）选择为2：通讯控制时，上位机通过该通讯地址，可以实现对变频器的启停等相关命令控制，控制命令定义如下：
+
+
+
+控制命令通讯地址
+命令功能
+
+
+
+
+2000H
+1：正转运行 2：反转运行 3：正转点动 4：反转点动 5：自由停机 6：减速停机 7：故障复位
+
+
+
+8.2.6 通讯设定值
+    通讯设定值主要用于中频率源、转矩上限源、VF分离电压源、PID给定源、PID反馈源等选择为通讯给定时的给定数据，其通讯地址为1000H，上位机设定该通讯地址值时，其数据范围为-10000～10000，对应相对给定值-100.00%-100.00%.
+8.2.7 数字输出端子控制
+    当数字输出端子功能选择为20：通讯控制时，上位机通过该通讯地址，可以实现对变频器数字输出端子的控制，定义如下：
+
+
+
+数字输出端子控制通讯地址
+命令内容
+
+
+
+
+2001H
+BiT0：DO1输出控制 BiT1：DO2输出控制 BiT2：RELAY1输出控制 BiT3：RELAY2输出控制 BiT4：FMR输出控制BiT5：VDO1 BiT6：VDO2 BiT7：VDO3 BiT8：VDO4 BiT9：VDO5
+
+
+
+8.2.8 模拟量输出AO1、AO2.高速脉冲输出FMP控制
+    当模拟量输出AO1、AO2，高速脉冲输出FMP输出功能选择为12：通讯设定时，上位机通过该通讯地址，可以实现对变频器模拟量、高速脉冲输出的控制，定义如下：
+
+
+
+输出端子
+输出控制通讯地址
+命令内容
+
+
+
+
+AO1
+2002H
+0～7FFF表示0%～100%
+
+
+AO2
+2003H
+0～7FFF表示0%～100%
+
+
+FMP
+2004H
+0～7FFF表示0%～100%
+
+
+
+8.2.9 参数初始化
+    当需要通过上位机实现对变频器的参数初始化操作时，需要使用该功能。
+如果PP-00（用户密码）不为0，则首先需要通过进行密码校验，校验通过后，在30秒后，上位机进行参数初始化操作。
+通讯进行用户密码校验的通讯地址为1F00H，直接将正确的用户密码写入该地址，则可以完成密码校验。
+通讯进行参数初始化的地址为1F01H，其数据内容定义如下：
+
+
+
+参数初始化通讯地址
+命令功能
+
+
+
+
+1F01H
+1：恢复出厂参数 2：清楚记录信息 4：恢复用户备份参数 501：备份用户当前参数
+
+
+
+探索以下文档以便了解更多内容：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.lyskjd.com/docs/modbus-communication-protocol/communication-data-address-definition/" /><meta property="article:section" content="docs" />
+
+
+
+  <meta itemprop="name" content="8.2 通讯数据地址定义">
+<meta itemprop="description" content="通讯数据可分为功能码数据、非功能码数据，后者包括运行命令、运行状态、运行参数、告警信息等。
+8.2.1 功能码数据
+    功能码数据为变频器的重要设置参数，有P组和A组功能参数，参数群组如下：
+
+
+
+功能码数据
+数据范围
+属性值
+
+
+
+
+P组
+P0、P1、P2、P3、P4、P5、P6、P7、P8、P9、PA、PB、PC、PD、PE、PF
+可读写
+
+
+A组
+A0、A1、A2、A3、A4、A5、A6、A7、A8、A9、 AA、AB、AC、AD、AE、AF
+可读写
+
+
+
+功能码数据通讯地址定义如下：
+1、当为通讯读取功能码数据时，对于P0～PF、A0～AF组功能码数据，其通讯地址高十六位直接为功能组编号，低十六位直接为功能码在功能组中序号，举例如下：
+P0-16功能参数：其通讯地址为F010H，其中F0H代表P0组功能参数，10H代表功能组中序号16的十六进制数据格式。
+AC-08功能参数：其通讯地址为AC08，其中ACH代表AC组功能参数，08H代表功能码在功能组中序号08的十六进制数据格式。
+2、当为通讯写入功能码数据时，对于PO～PF组功能码数据，其通讯地址高十六位，根据是否写入EEPROM，区分为00～0F或F0～FF，低十六位直接为功能码在功能组中序号，举例如下：
+写功能在参数P0-16：
+需要写入EEPROM时，其通讯地址为F010H，
+不需要写入EEPROM时，其通讯地址为0010H。
+3、当为通讯写入EEPROM数据时，，对于A0～AF组功能码数据，其通讯地址高十六位区分为10～4F或A0～AF，低十六位直接为功能码在功能组中序号，举例如下： 
+写功能参数AC-08：
+需要写入EEPROM时，其通讯地址为AC08H，
+不需要写入EEPROM时，其通讯地址为4C08H。
+8.2.2 非功能码数据
+    
+
+
+非功能码数据
+数据范围
+属性值
+
+
+
+
+状态数据
+U组监视参数、变频器故障描述、变频器运行状态
+可读
+
+
+控制参数
+控制命令、通讯设定值、数字输出端子控制、模拟输出AO1控制、模拟输出 、AO2控制、高速脉冲（FMP）输出控制、参数初始化
+可写
+
+
+
+8.2.3 状态数据
+    状态数据分为U组监视参数、变频器故障描述、变频器运行状态。
+1、U组参数监视参数
+U组监视数据描述见说明书相关U0组功能描述，其地址定义如下：
+U0～UF，其通讯地址高十六位为70～7F，低十六位为监视参数在组中的序号，举例如下：   U0-11，其通讯地址为700BH。
+2、变频器故障描述
+通讯读取变频器故障时通讯地址固定为8000H，上位机通过读取该地址数据可以获取当前变频器故障代码，故障代码描述见第五章P9-14功能码 中定义。
+3、变频器运行状态
+通讯读取变频器运行状态时，通讯地址因定为3000H，上位机通过读取该地焉数据，可以获取当前变频器运行状态信息，定义如下：
+
+
+
+变频器运行状态通讯地址
+读取状态字定义
+
+
+
+
+3000H
+1：正转运行 2：反转运行 3：停机
+
+
+
+8.2.4 控制参数
+    控制参数分为控制命令、数字输出端子控制、模拟输出AO1控制、模拟输出AO2控制、高速脉冲（FMP）输出控制。
+8.2.5 控制命令
+    在P0-02（命令源）选择为2：通讯控制时，上位机通过该通讯地址，可以实现对变频器的启停等相关命令控制，控制命令定义如下：
+
+
+
+控制命令通讯地址
+命令功能
+
+
+
+
+2000H
+1：正转运行 2：反转运行 3：正转点动 4：反转点动 5：自由停机 6：减速停机 7：故障复位
+
+
+
+8.2.6 通讯设定值
+    通讯设定值主要用于中频率源、转矩上限源、VF分离电压源、PID给定源、PID反馈源等选择为通讯给定时的给定数据，其通讯地址为1000H，上位机设定该通讯地址值时，其数据范围为-10000～10000，对应相对给定值-100.00%-100.00%.
+8.2.7 数字输出端子控制
+    当数字输出端子功能选择为20：通讯控制时，上位机通过该通讯地址，可以实现对变频器数字输出端子的控制，定义如下：
+
+
+
+数字输出端子控制通讯地址
+命令内容
+
+
+
+
+2001H
+BiT0：DO1输出控制 BiT1：DO2输出控制 BiT2：RELAY1输出控制 BiT3：RELAY2输出控制 BiT4：FMR输出控制BiT5：VDO1 BiT6：VDO2 BiT7：VDO3 BiT8：VDO4 BiT9：VDO5
+
+
+
+8.2.8 模拟量输出AO1、AO2.高速脉冲输出FMP控制
+    当模拟量输出AO1、AO2，高速脉冲输出FMP输出功能选择为12：通讯设定时，上位机通过该通讯地址，可以实现对变频器模拟量、高速脉冲输出的控制，定义如下：
+
+
+
+输出端子
+输出控制通讯地址
+命令内容
+
+
+
+
+AO1
+2002H
+0～7FFF表示0%～100%
+
+
+AO2
+2003H
+0～7FFF表示0%～100%
+
+
+FMP
+2004H
+0～7FFF表示0%～100%
+
+
+
+8.2.9 参数初始化
+    当需要通过上位机实现对变频器的参数初始化操作时，需要使用该功能。
+如果PP-00（用户密码）不为0，则首先需要通过进行密码校验，校验通过后，在30秒后，上位机进行参数初始化操作。
+通讯进行用户密码校验的通讯地址为1F00H，直接将正确的用户密码写入该地址，则可以完成密码校验。
+通讯进行参数初始化的地址为1F01H，其数据内容定义如下：
+
+
+
+参数初始化通讯地址
+命令功能
+
+
+
+
+1F01H
+1：恢复出厂参数 2：清楚记录信息 4：恢复用户备份参数 501：备份用户当前参数
+
+
+
+探索以下文档以便了解更多内容：">
+
+<meta itemprop="wordCount" content="2070">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="8.2 通讯数据地址定义"/>
+<meta name="twitter:description" content="通讯数据可分为功能码数据、非功能码数据，后者包括运行命令、运行状态、运行参数、告警信息等。
+8.2.1 功能码数据
+    功能码数据为变频器的重要设置参数，有P组和A组功能参数，参数群组如下：
+
+
+
+功能码数据
+数据范围
+属性值
+
+
+
+
+P组
+P0、P1、P2、P3、P4、P5、P6、P7、P8、P9、PA、PB、PC、PD、PE、PF
+可读写
+
+
+A组
+A0、A1、A2、A3、A4、A5、A6、A7、A8、A9、 AA、AB、AC、AD、AE、AF
+可读写
+
+
+
+功能码数据通讯地址定义如下：
+1、当为通讯读取功能码数据时，对于P0～PF、A0～AF组功能码数据，其通讯地址高十六位直接为功能组编号，低十六位直接为功能码在功能组中序号，举例如下：
+P0-16功能参数：其通讯地址为F010H，其中F0H代表P0组功能参数，10H代表功能组中序号16的十六进制数据格式。
+AC-08功能参数：其通讯地址为AC08，其中ACH代表AC组功能参数，08H代表功能码在功能组中序号08的十六进制数据格式。
+2、当为通讯写入功能码数据时，对于PO～PF组功能码数据，其通讯地址高十六位，根据是否写入EEPROM，区分为00～0F或F0～FF，低十六位直接为功能码在功能组中序号，举例如下：
+写功能在参数P0-16：
+需要写入EEPROM时，其通讯地址为F010H，
+不需要写入EEPROM时，其通讯地址为0010H。
+3、当为通讯写入EEPROM数据时，，对于A0～AF组功能码数据，其通讯地址高十六位区分为10～4F或A0～AF，低十六位直接为功能码在功能组中序号，举例如下： 
+写功能参数AC-08：
+需要写入EEPROM时，其通讯地址为AC08H，
+不需要写入EEPROM时，其通讯地址为4C08H。
+8.2.2 非功能码数据
+    
+
+
+非功能码数据
+数据范围
+属性值
+
+
+
+
+状态数据
+U组监视参数、变频器故障描述、变频器运行状态
+可读
+
+
+控制参数
+控制命令、通讯设定值、数字输出端子控制、模拟输出AO1控制、模拟输出 、AO2控制、高速脉冲（FMP）输出控制、参数初始化
+可写
+
+
+
+8.2.3 状态数据
+    状态数据分为U组监视参数、变频器故障描述、变频器运行状态。
+1、U组参数监视参数
+U组监视数据描述见说明书相关U0组功能描述，其地址定义如下：
+U0～UF，其通讯地址高十六位为70～7F，低十六位为监视参数在组中的序号，举例如下：   U0-11，其通讯地址为700BH。
+2、变频器故障描述
+通讯读取变频器故障时通讯地址固定为8000H，上位机通过读取该地址数据可以获取当前变频器故障代码，故障代码描述见第五章P9-14功能码 中定义。
+3、变频器运行状态
+通讯读取变频器运行状态时，通讯地址因定为3000H，上位机通过读取该地焉数据，可以获取当前变频器运行状态信息，定义如下：
+
+
+
+变频器运行状态通讯地址
+读取状态字定义
+
+
+
+
+3000H
+1：正转运行 2：反转运行 3：停机
+
+
+
+8.2.4 控制参数
+    控制参数分为控制命令、数字输出端子控制、模拟输出AO1控制、模拟输出AO2控制、高速脉冲（FMP）输出控制。
+8.2.5 控制命令
+    在P0-02（命令源）选择为2：通讯控制时，上位机通过该通讯地址，可以实现对变频器的启停等相关命令控制，控制命令定义如下：
+
+
+
+控制命令通讯地址
+命令功能
+
+
+
+
+2000H
+1：正转运行 2：反转运行 3：正转点动 4：反转点动 5：自由停机 6：减速停机 7：故障复位
+
+
+
+8.2.6 通讯设定值
+    通讯设定值主要用于中频率源、转矩上限源、VF分离电压源、PID给定源、PID反馈源等选择为通讯给定时的给定数据，其通讯地址为1000H，上位机设定该通讯地址值时，其数据范围为-10000～10000，对应相对给定值-100.00%-100.00%.
+8.2.7 数字输出端子控制
+    当数字输出端子功能选择为20：通讯控制时，上位机通过该通讯地址，可以实现对变频器数字输出端子的控制，定义如下：
+
+
+
+数字输出端子控制通讯地址
+命令内容
+
+
+
+
+2001H
+BiT0：DO1输出控制 BiT1：DO2输出控制 BiT2：RELAY1输出控制 BiT3：RELAY2输出控制 BiT4：FMR输出控制BiT5：VDO1 BiT6：VDO2 BiT7：VDO3 BiT8：VDO4 BiT9：VDO5
+
+
+
+8.2.8 模拟量输出AO1、AO2.高速脉冲输出FMP控制
+    当模拟量输出AO1、AO2，高速脉冲输出FMP输出功能选择为12：通讯设定时，上位机通过该通讯地址，可以实现对变频器模拟量、高速脉冲输出的控制，定义如下：
+
+
+
+输出端子
+输出控制通讯地址
+命令内容
+
+
+
+
+AO1
+2002H
+0～7FFF表示0%～100%
+
+
+AO2
+2003H
+0～7FFF表示0%～100%
+
+
+FMP
+2004H
+0～7FFF表示0%～100%
+
+
+
+8.2.9 参数初始化
+    当需要通过上位机实现对变频器的参数初始化操作时，需要使用该功能。
+如果PP-00（用户密码）不为0，则首先需要通过进行密码校验，校验通过后，在30秒后，上位机进行参数初始化操作。
+通讯进行用户密码校验的通讯地址为1F00H，直接将正确的用户密码写入该地址，则可以完成密码校验。
+通讯进行参数初始化的地址为1F01H，其数据内容定义如下：
+
+
+
+参数初始化通讯地址
+命令功能
+
+
+
+
+1F01H
+1：恢复出厂参数 2：清楚记录信息 4：恢复用户备份参数 501：备份用户当前参数
+
+
+
+探索以下文档以便了解更多内容："/>
+
+    <link rel="preload" href="/css/compiled/main.min.5a06ca26e024c4f511f45ee6c33a2a1faefaebe6be8a38d36e100f40a4c59c06.css" as="style" integrity="sha256-WgbKJuAkxPUR9F7mwzoqH6766&#43;a&#43;ijjTbhAPQKTFnAY=" />
+    <link href="/css/compiled/main.min.5a06ca26e024c4f511f45ee6c33a2a1faefaebe6be8a38d36e100f40a4c59c06.css" rel="stylesheet" integrity="sha256-WgbKJuAkxPUR9F7mwzoqH6766&#43;a&#43;ijjTbhAPQKTFnAY=" />
+
+
+
+  <link href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" rel="stylesheet" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" />
+
+
+
+  
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NPSXGYM2K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-2NPSXGYM2K");
+  </script>
+
+
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+    <script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.onselectstart = function() { return false; }
+  </script>
+  
+
+<script>
+  (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+  ChannelIO('boot', {
+    "pluginKey": "b9962139-2190-4324-8ea7-4d7e66cfa543"
+  });
+</script>
+</head>
+<body dir="ltr"><div class="nav-container sticky top-0 z-20 w-full bg-transparent print:hidden">
+  <div class="nav-container-blur pointer-events-none absolute z-[-1] h-full w-full bg-white dark:bg-dark shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] contrast-more:shadow-[0_0_0_1px_#000] dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] contrast-more:dark:shadow-[0_0_0_1px_#fff]"></div>
+
+  <nav class="mx-auto flex items-center justify-end gap-2 h-16 px-6 max-w-[90rem]">
+    <a class="flex items-center hover:opacity-75 ltr:mr-auto rtl:ml-auto" href="/">
+        <img class="block dark:hidden" src="/images/logo.jpg" alt="变频器厂家-山东临沂森阔机电有限公司" height="20" width="20" />
+        <img class="hidden dark:block" src="/images/logo.jpg" alt="变频器厂家-山东临沂森阔机电有限公司" height="20" width="20" />
+        <span class="mx-2 font-extrabold inline select-none" title="变频器厂家-山东临沂森阔机电有限公司">变频器厂家-山东临沂森阔机电有限公司</span>
+    </a><a
+            title="文档"
+            href="/docs"
+            
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block font-medium"
+          >
+            <span class="text-center">文档</span>
+          </a><a
+            title="产品"
+            href="/products"
+            
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <span class="text-center">产品</span>
+          </a><a
+            title="博客"
+            href="/blog"
+            
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <span class="text-center">博客</span>
+          </a><a
+            title="相册"
+            href="/gallery"
+            
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <span class="text-center">相册</span>
+          </a><a
+            title="关于"
+            href="/about"
+            
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <span class="text-center">关于</span>
+          </a><a
+            title="购买"
+            href="https://item.taobao.com/item.htm?ft=t&amp;id=771441899583"
+            target="_blank" rel="noreferer"
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <span class="text-center">购买</span>
+          </a><a
+            title="联系"
+            href="/about/#-%e8%81%94%e7%b3%bb%e6%88%91%e4%bb%ac"
+            
+            class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <span class="text-center">联系</span>
+          </a><div class="search-wrapper relative md:w-64">
+  <div class="relative flex items-center text-gray-900 contrast-more:text-gray-800 dark:text-gray-300 contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="search-input block w-full appearance-none rounded-lg px-3 py-2 transition-colors text-base leading-tight md:text-sm bg-black/[.05] dark:bg-gray-50/10 focus:bg-white dark:focus:bg-dark placeholder:text-gray-500 dark:placeholder:text-gray-400 contrast-more:border contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="absolute my-1.5 select-none ltr:right-1.5 rtl:left-1.5 h-5 rounded bg-white px-1.5 font-mono text-[10px] font-medium text-gray-500 border dark:border-gray-100/20 dark:bg-dark/50 contrast-more:border-current contrast-more:text-current contrast-more:dark:border-current items-center gap-1 transition-opacity pointer-events-none hidden sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hidden border border-gray-200 bg-white text-gray-100 dark:border-neutral-800 dark:bg-neutral-900 absolute top-full z-20 mt-2 overflow-auto overscroll-contain rounded-xl py-2.5 shadow-xl max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] inset-x-0 ltr:md:left-auto rtl:md:right-auto contrast-more:border contrast-more:border-gray-900 contrast-more:dark:border-gray-50 w-screen min-h-[100px] max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="p-2 text-current" target="_blank" rel="noreferer" href="https://item.taobao.com/item.htm?ft=t&amp;id=771441899583" title="在线下单"><svg height=24 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg><span class="sr-only">在线下单</span>
+          </a>
+          <a class="p-2 text-current"  href="/images/02.jpg" title="电话联系"><svg height=24 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><span class="sr-only">电话联系</span>
+          </a><button type="button" aria-label="Menu" class="hamburger-menu -mr-2 rounded p-2 active:bg-gray-400/20 md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class='mx-auto flex max-w-screen-xl'>
+    <div class="mobile-menu-overlay [transition:background-color_1.5s_ease] fixed inset-0 z-10 bg-black/80 dark:bg-black/60 hidden"></div>
+<aside class="sidebar-container flex flex-col print:hidden md:top-16 md:shrink-0 md:w-64 md:self-start max-md:[transform:translate3d(0,-100%,0)] md:sticky">
+  
+  <div class="px-4 pt-4 md:hidden">
+    <div class="search-wrapper relative md:w-64">
+  <div class="relative flex items-center text-gray-900 contrast-more:text-gray-800 dark:text-gray-300 contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="search-input block w-full appearance-none rounded-lg px-3 py-2 transition-colors text-base leading-tight md:text-sm bg-black/[.05] dark:bg-gray-50/10 focus:bg-white dark:focus:bg-dark placeholder:text-gray-500 dark:placeholder:text-gray-400 contrast-more:border contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="absolute my-1.5 select-none ltr:right-1.5 rtl:left-1.5 h-5 rounded bg-white px-1.5 font-mono text-[10px] font-medium text-gray-500 border dark:border-gray-100/20 dark:bg-dark/50 contrast-more:border-current contrast-more:text-current contrast-more:dark:border-current items-center gap-1 transition-opacity pointer-events-none hidden sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hidden border border-gray-200 bg-white text-gray-100 dark:border-neutral-800 dark:bg-neutral-900 absolute top-full z-20 mt-2 overflow-auto overscroll-contain rounded-xl py-2.5 shadow-xl max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] inset-x-0 ltr:md:left-auto rtl:md:right-auto contrast-more:border contrast-more:border-gray-900 contrast-more:dark:border-gray-50 w-screen min-h-[100px] max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar overflow-y-auto overflow-x-hidden p-4 grow md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="flex flex-col gap-1 md:hidden">
+      
+      
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/"
+    
+  >博客
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/high-performance-variable-frequency-drives/"
+    
+  >高性能变频器：工业自动化的加速器
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/frequency-converter-control-system/"
+    
+  >变频器控制系统：工业自动化的智能大脑
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/vector-variable-frequency-drives-the-industrial-power-multiplier-for-precise-control/"
+    
+  >矢量变频器：精准控制的工业力量倍增器
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/low-voltage-variable-frequency-drives/"
+    
+  >低压变频器：提升能效的智能选择
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/three-phase-variable-frequency-drives-the-intelligent-speed-control-pioneer-for-industrial-power/"
+    
+  >三相变频器：工业动力的智能调速先锋
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/universal-variable-frequency-drives-intelligent-speed-control-solutions-for-multiple-scenarios/"
+    
+  >通用变频器：多场景下的智能调速解决方案
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/comprehensive-analysis-of-variable-frequency-drive-vfd-prices/"
+    
+  >变频器价格全解析：如何找到性价比之选？
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/how-to-install-and-troubleshoot-a-variable-frequency-drive-vfd/"
+    
+  >如何安装和调试变频器？电气高手的完整指南
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/mastering-the-art-of-wholesale-distribution-of-variable-frequency-drives/"
+    
+  >掌握变频器批发的艺术：为企业节省成本的策略
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/a-comprehensive-guide-to-becoming-a-distributor-of-variable-frequency-drives/"
+    
+  >掌握未来工业的脉动：成为变频器经销商的全面指南
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/blog/faq/"
+    
+  >变频器常见问题解答
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/"
+    
+  >变频器使用说明书
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/table-of-contents/"
+    
+  >变频器使用说明书目录
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/safety-precautions/"
+    
+  >第一章 安全注意事项
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/"
+    
+  >第二章 产品信息
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/technical-specifications-table/"
+    
+  >2.1 技术规范表
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/product-aluminum-plate/"
+    
+  >2.2 产品铭牌
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/model-description/"
+    
+  >2.3 型号说明
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/product-selection-specification-table/"
+    
+  >2.4 产品选型规格表
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/keyboard-tray-dimensional-diagram/"
+    
+  >2.5 键盘托盘尺寸图
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/"
+    
+  >第三章 安装
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/overall-equipment-dimensional-diagram/"
+    
+  >3.1 整机结构尺寸图
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/main-circuit-terminals-and-functions/"
+    
+  >3.2 主回路端子及功能
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/control-circuit-terminals-and-functions/"
+    
+  >3.3 控制回路端子及功能
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/control-terminals-and-functions/"
+    
+  >3.4 控制端子及功能
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/panel-display-and-operation/"
+    
+  >第四章 面板显示与操作
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/panel-display-and-operation/display-interface-introduction/"
+    
+  >4.1 显示界面介绍
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/panel-display-and-operation/terminal-application-wiring-diagram/"
+    
+  >4.2 端子应用接线图
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/"
+    
+  >第五章 功能参数表
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/basic-parameters/"
+    
+  >5.1 P0组：基本参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/motor-parameters/"
+    
+  >5.2 P1组：电机参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/vector-parameter/"
+    
+  >5.3 P2组：矢量参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/v-f-control-parameters/"
+    
+  >5.4 P3组：V/F控制参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/input-terminal-parameters/"
+    
+  >5.5 P4组：输入端子参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/output-terminal-parameters/"
+    
+  >5.6 P5组：输出端子参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/start-stop-control-parameters/"
+    
+  >5.7 P6组：启停控制参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/keyboard-and-display/"
+    
+  >5.8 P7组：键盘与显示
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/accessibility-features/"
+    
+  >5.9 P8组：辅助功能参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/malfunction-and-protection/"
+    
+  >5.10 P9组：故障与保护参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/pid-function-parameters/"
+    
+  >5.11 PA组：PID功能参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/pulse-frequency-and-counting/"
+    
+  >5.12 Pb组：摆频、定长和计数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/multi-segment-speed-instructions-and-simplified-plc/"
+    
+  >5.13 Pc组：多段速指令和简易PLC
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/communication-parameters/"
+    
+  >5.14 Pd组：通讯参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/function-code-management/"
+    
+  >5.15 PP组：功能码管理
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/control-optimization-parameters/"
+    
+  >5.16 A5组：控制优化参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/intelligent-constant-pressure-water-supply-parameters/"
+    
+  >5.17 b0组：智能恒压供水参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/parameter-monitoring/"
+    
+  >5.18 U0组：参数监视
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/"
+    
+  >第六章 行业应用宏使用说明
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/restore-to-factory-settings/"
+    
+  >6.1 恢复出厂设置
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/constant-pressure-water-supply-macro-settings/"
+    
+  >6.2 恒压供水宏
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/machine-tool-macro-settings/"
+    
+  >6.3 机床宏100HZ
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/engraving-machine-macro-settings/"
+    
+  >6.4 雕刻机宏400HZ
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/fault-diagnosis-and-countermeasures/"
+    
+  >第七章 故障诊断及对策
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/fault-diagnosis-and-countermeasures/fault-alarm-and-countermeasures/"
+    
+  >7.1 故障报警及对策
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/fault-diagnosis-and-countermeasures/common-faults-and-remediation-procedures/"
+    
+  >7.2 常见故障及其处理方法
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col open"><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/modbus-communication-protocol/"
+    
+  >第八章 ModBus通讯协议
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/modbus-communication-protocol/agreement-content/"
+    
+  >8.1 协议内容
+    </a>
+              
+            </li><li class="flex flex-col open"><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 contrast-more:border contrast-more:border-primary-500 dark:bg-primary-400/10 dark:text-primary-600 contrast-more:dark:border-primary-500"
+    href="/docs/modbus-communication-protocol/communication-data-address-definition/"
+    
+  >8.2 通讯数据地址定义
+    </a>
+  
+    <ul class='flex flex-col gap-1 relative before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] dark:before:bg-neutral-800 ltr:pl-3 ltr:before:left-0 rtl:pr-3 rtl:before:right-0 ltr:ml-3 rtl:mr-3'><li>
+              <a
+                href="#"
+                class="flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word] cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border gap-2 before:opacity-25 before:content-['#'] text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+              ></a>
+            </li>
+          </ul>
+  
+              
+            </li></ul>
+      </div>
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/warranty-instructions/"
+    
+  >保修说明
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/gallery/"
+    
+  >产品相册
+    </a></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/about/"
+    
+  >关于我们
+    </a></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/products/"
+    
+  >主营产品
+    </a></li>
+      <li class="[word-break:break-word] mt-5 mb-2 px-2 py-1.5 text-sm font-semibold text-gray-900 first:mt-0 dark:text-gray-100">
+        <span class="cursor-default">更多</span>
+      </li>
+    
+      <li><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="https://item.taobao.com/item.htm?ft=t&amp;id=771441899583"
+    target="_blank" rel="noreferer"
+  >立即购买 ↗</a></li>
+    
+      <li><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/about/#-%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC"
+    
+  >联系我们</a></li>
+    
+      <li><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/about/"
+    
+  >关于我们</a></li>
+    
+    </ul>
+
+    <ul class="flex flex-col gap-1 max-md:hidden">
+        
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/table-of-contents/"
+    
+  >变频器使用说明书目录
+    </a></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/safety-precautions/"
+    
+  >第一章 安全注意事项
+    </a></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/"
+    
+  >第二章 产品信息
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/technical-specifications-table/"
+    
+  >2.1 技术规范表
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/product-aluminum-plate/"
+    
+  >2.2 产品铭牌
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/model-description/"
+    
+  >2.3 型号说明
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/product-selection-specification-table/"
+    
+  >2.4 产品选型规格表
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/product-information/keyboard-tray-dimensional-diagram/"
+    
+  >2.5 键盘托盘尺寸图
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/"
+    
+  >第三章 安装
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/overall-equipment-dimensional-diagram/"
+    
+  >3.1 整机结构尺寸图
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/main-circuit-terminals-and-functions/"
+    
+  >3.2 主回路端子及功能
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/control-circuit-terminals-and-functions/"
+    
+  >3.3 控制回路端子及功能
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/mounting/control-terminals-and-functions/"
+    
+  >3.4 控制端子及功能
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/panel-display-and-operation/"
+    
+  >第四章 面板显示与操作
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/panel-display-and-operation/display-interface-introduction/"
+    
+  >4.1 显示界面介绍
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/panel-display-and-operation/terminal-application-wiring-diagram/"
+    
+  >4.2 端子应用接线图
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/"
+    
+  >第五章 功能参数表
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/basic-parameters/"
+    
+  >5.1 P0组：基本参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/motor-parameters/"
+    
+  >5.2 P1组：电机参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/vector-parameter/"
+    
+  >5.3 P2组：矢量参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/v-f-control-parameters/"
+    
+  >5.4 P3组：V/F控制参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/input-terminal-parameters/"
+    
+  >5.5 P4组：输入端子参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/output-terminal-parameters/"
+    
+  >5.6 P5组：输出端子参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/start-stop-control-parameters/"
+    
+  >5.7 P6组：启停控制参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/keyboard-and-display/"
+    
+  >5.8 P7组：键盘与显示
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/accessibility-features/"
+    
+  >5.9 P8组：辅助功能参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/malfunction-and-protection/"
+    
+  >5.10 P9组：故障与保护参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/pid-function-parameters/"
+    
+  >5.11 PA组：PID功能参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/pulse-frequency-and-counting/"
+    
+  >5.12 Pb组：摆频、定长和计数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/multi-segment-speed-instructions-and-simplified-plc/"
+    
+  >5.13 Pc组：多段速指令和简易PLC
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/communication-parameters/"
+    
+  >5.14 Pd组：通讯参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/function-code-management/"
+    
+  >5.15 PP组：功能码管理
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/control-optimization-parameters/"
+    
+  >5.16 A5组：控制优化参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/intelligent-constant-pressure-water-supply-parameters/"
+    
+  >5.17 b0组：智能恒压供水参数
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/functional-parameter-table/parameter-monitoring/"
+    
+  >5.18 U0组：参数监视
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/"
+    
+  >第六章 行业应用宏使用说明
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/restore-to-factory-settings/"
+    
+  >6.1 恢复出厂设置
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/constant-pressure-water-supply-macro-settings/"
+    
+  >6.2 恒压供水宏
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/machine-tool-macro-settings/"
+    
+  >6.3 机床宏100HZ
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/industry-application-macro-usage-instructions/engraving-machine-macro-settings/"
+    
+  >6.4 雕刻机宏400HZ
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/fault-diagnosis-and-countermeasures/"
+    
+  >第七章 故障诊断及对策
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/fault-diagnosis-and-countermeasures/fault-alarm-and-countermeasures/"
+    
+  >7.1 故障报警及对策
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/fault-diagnosis-and-countermeasures/common-faults-and-remediation-procedures/"
+    
+  >7.2 常见故障及其处理方法
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/modbus-communication-protocol/"
+    
+  >第八章 ModBus通讯协议
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg></span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class='relative flex flex-col gap-1 before:absolute before:inset-y-1 before:w-px before:bg-gray-200 before:content-[""] ltr:ml-3 ltr:pl-3 ltr:before:left-0 rtl:mr-3 rtl:pr-3 rtl:before:right-0 dark:before:bg-neutral-800'><li class="flex flex-col "><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/modbus-communication-protocol/agreement-content/"
+    
+  >8.1 协议内容
+    </a>
+              
+            </li><li class="flex flex-col open"><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 contrast-more:border contrast-more:border-primary-500 dark:bg-primary-400/10 dark:text-primary-600 contrast-more:dark:border-primary-500"
+    href="/docs/modbus-communication-protocol/communication-data-address-definition/"
+    
+  >8.2 通讯数据地址定义
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/docs/warranty-instructions/"
+    
+  >保修说明
+    </a></li>
+        
+      <li class="[word-break:break-word] mt-5 mb-2 px-2 py-1.5 text-sm font-semibold text-gray-900 first:mt-0 dark:text-gray-100">
+        <span class="cursor-default">更多</span>
+      </li>
+    
+      <li><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="https://item.taobao.com/item.htm?ft=t&amp;id=771441899583"
+    target="_blank" rel="noreferer"
+  >立即购买 ↗</a></li>
+    
+      <li><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/about/#-%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC"
+    
+  >联系我们</a></li>
+    
+      <li><a
+    class="flex items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50"
+    href="/about/"
+    
+  >关于我们</a></li>
+    
+      </ul>
+    </div>
+  
+  
+    <div class="  sticky bottom-0 bg-white dark:bg-dark mx-4 py-4 shadow-[0_-12px_16px_#fff] flex items-center gap-2 dark:border-neutral-800 dark:shadow-[0_-12px_16px_#111] contrast-more:border-neutral-400 contrast-more:shadow-none contrast-more:dark:shadow-none border-t" data-toggle-animation="show"><div class="flex grow flex-col"><button
+  title="切换主题"
+  data-theme="light"
+  class="theme-toggle group h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="flex items-center gap-2 capitalize"><svg height=12 class="group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hidden">浅色</span><svg height=12 class="group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hidden">深色</span></div>
+</button>
+</div></div></aside>
+    
+<nav class="hextra-toc order-last hidden w-64 shrink-0 xl:block print:hidden px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar sticky top-16 overflow-y-auto pr-4 pt-6 text-sm [hyphens:auto] max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:-mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">此页上</p><ul>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#821-%e5%8a%9f%e8%83%bd%e7%a0%81%e6%95%b0%e6%8d%ae">8.2.1 功能码数据
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#822-%e9%9d%9e%e5%8a%9f%e8%83%bd%e7%a0%81%e6%95%b0%e6%8d%ae">8.2.2 非功能码数据
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#823-%e7%8a%b6%e6%80%81%e6%95%b0%e6%8d%ae">8.2.3 状态数据
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#824-%e6%8e%a7%e5%88%b6%e5%8f%82%e6%95%b0">8.2.4 控制参数
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#825-%e6%8e%a7%e5%88%b6%e5%91%bd%e4%bb%a4">8.2.5 控制命令
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#826-%e9%80%9a%e8%ae%af%e8%ae%be%e5%ae%9a%e5%80%bc">8.2.6 通讯设定值
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#827-%e6%95%b0%e5%ad%97%e8%be%93%e5%87%ba%e7%ab%af%e5%ad%90%e6%8e%a7%e5%88%b6">8.2.7 数字输出端子控制
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#828-%e6%a8%a1%e6%8b%9f%e9%87%8f%e8%be%93%e5%87%baao1ao2%e9%ab%98%e9%80%9f%e8%84%89%e5%86%b2%e8%be%93%e5%87%bafmp%e6%8e%a7%e5%88%b6">8.2.8 模拟量输出AO1、AO2.高速脉冲输出FMP控制
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#829-%e5%8f%82%e6%95%b0%e5%88%9d%e5%a7%8b%e5%8c%96">8.2.9 参数初始化
+        </a>
+      </li></ul>
+      <div class="mt-8 border-t bg-white pt-8 shadow-[0_-12px_16px_white] dark:bg-dark dark:shadow-[0_-12px_16px_#111] sticky bottom-0 flex flex-col items-start gap-2 pb-8 dark:border-neutral-800 contrast-more:border-t contrast-more:border-neutral-400 contrast-more:shadow-none contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="transition-all transition duration-75 opacity-0 text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 contrast-more:text-gray-800 contrast-more:dark:text-gray-50">
+          <span>返回顶部</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline ml-1 h-3.5 w-3.5 border rounded-full border-gray-500 hover:border-gray-900 dark:border-gray-400 dark:hover:border-gray-100 contrast-more:border-gray-800 contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+        <div class="mt-1.5 flex items-center gap-1 overflow-hidden text-sm text-gray-500 dark:text-gray-400 contrast-more:text-current">
+      <div class="whitespace-nowrap transition-colors min-w-[24px] overflow-hidden text-ellipsis hover:text-gray-900 dark:hover:text-gray-100">
+        <a href="https://www.lyskjd.com/docs/">变频器使用说明书</a>
+      </div><svg class="w-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      <div class="whitespace-nowrap transition-colors min-w-[24px] overflow-hidden text-ellipsis hover:text-gray-900 dark:hover:text-gray-100">
+        <a href="https://www.lyskjd.com/docs/modbus-communication-protocol/">第八章 ModBus通讯协议</a>
+      </div><svg class="w-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="whitespace-nowrap transition-colors font-medium text-gray-700 contrast-more:font-bold contrast-more:text-current dark:text-gray-100 contrast-more:dark:text-current">8.2 通讯数据地址定义</div>
+</div>
+
+        <div class="content">
+          <h1>8.2 通讯数据地址定义</h1>
+          <p>通讯数据可分为功能码数据、非功能码数据，后者包括运行命令、运行状态、运行参数、告警信息等。</p>
+<h3>8.2.1 功能码数据<span class="absolute -mt-20" id="821-功能码数据"></span>
+    <a href="#821-%e5%8a%9f%e8%83%bd%e7%a0%81%e6%95%b0%e6%8d%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>功能码数据为变频器的重要设置参数，有P组和A组功能参数，参数群组如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">功能码数据</th>
+<th style="text-align:left">数据范围</th>
+<th style="text-align:center">属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">P组</td>
+<td style="text-align:left">P0、P1、P2、P3、P4、P5、P6、P7、P8、P9、PA、PB、PC、PD、PE、PF</td>
+<td style="text-align:center">可读写</td>
+</tr>
+<tr>
+<td style="text-align:center">A组</td>
+<td style="text-align:left">A0、A1、A2、A3、A4、A5、A6、A7、A8、A9、 AA、AB、AC、AD、AE、AF</td>
+<td style="text-align:center">可读写</td>
+</tr>
+</tbody>
+</table>
+<p>功能码数据通讯地址定义如下：<br>
+1、当为通讯<strong>读取功能码</strong>数据时，对于P0～PF、A0～AF组功能码数据，其<strong>通讯地址高十六位直接为功能组编号，低十六位直接为功能码在功能组中序号</strong>，举例如下：<br>
+P0-16功能参数：其通讯地址为F010H，其中F0H代表P0组功能参数，10H代表功能组中序号16的十六进制数据格式。
+AC-08功能参数：其通讯地址为AC08，其中ACH代表AC组功能参数，08H代表功能码在功能组中序号08的十六进制数据格式。</p>
+<p>2、当为通讯<strong>写入功能码</strong>数据时，对于PO～PF组功能码数据，其通讯地址高十六位，根据是否写入EEPROM，区分为00～0F或F0～FF，低十六位直接为功能码在功能组中序号，举例如下：<br>
+写功能在参数P0-16：<br>
+需要写入EEPROM时，其通讯地址为F010H，<br>
+不需要写入EEPROM时，其通讯地址为0010H。</p>
+<p>3、当为通讯<strong>写入EEPROM</strong>数据时，，对于A0～AF组功能码数据，其通讯地址高十六位区分为10～4F或A0～AF，低十六位直接为功能码在功能组中序号，举例如下： <br>
+写功能参数AC-08：
+需要写入EEPROM时，其通讯地址为AC08H，<br>
+不需要写入EEPROM时，其通讯地址为4C08H。</p>
+<h3>8.2.2 非功能码数据<span class="absolute -mt-20" id="822-非功能码数据"></span>
+    <a href="#822-%e9%9d%9e%e5%8a%9f%e8%83%bd%e7%a0%81%e6%95%b0%e6%8d%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+<thead>
+<tr>
+<th style="text-align:center">非功能码数据</th>
+<th style="text-align:left">数据范围</th>
+<th style="text-align:center">属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">状态数据</td>
+<td style="text-align:left">U组监视参数、变频器故障描述、变频器运行状态</td>
+<td style="text-align:center">可读</td>
+</tr>
+<tr>
+<td style="text-align:center">控制参数</td>
+<td style="text-align:left">控制命令、通讯设定值、数字输出端子控制、模拟输出AO1控制、模拟输出 、AO2控制、高速脉冲（FMP）输出控制、参数初始化</td>
+<td style="text-align:center">可写</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2.3 状态数据<span class="absolute -mt-20" id="823-状态数据"></span>
+    <a href="#823-%e7%8a%b6%e6%80%81%e6%95%b0%e6%8d%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>状态数据分为U组监视参数、变频器故障描述、变频器运行状态。<br>
+1、U组参数监视参数<br>
+U组监视数据描述见说明书相关U0组功能描述，其地址定义如下：<br>
+U0～UF，其通讯地址高十六位为70～7F，低十六位为监视参数在组中的序号，举例如下：   U0-11，其通讯地址为700BH。<br>
+2、变频器故障描述<br>
+通讯读取变频器故障时通讯地址固定为8000H，上位机通过读取该地址数据可以获取当前变频器故障代码，故障代码描述见<a href="/docs/functional-parameter-table/malfunction-and-protection/" >第五章P9-14功能码</a> 中定义。<br>
+3、变频器运行状态
+通讯读取变频器运行状态时，通讯地址因定为3000H，上位机通过读取该地焉数据，可以获取当前变频器运行状态信息，定义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变频器运行状态通讯地址</th>
+<th style="text-align:left">读取状态字定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3000H</td>
+<td style="text-align:left">1：正转运行</br> 2：反转运行</br> 3：停机</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2.4 控制参数<span class="absolute -mt-20" id="824-控制参数"></span>
+    <a href="#824-%e6%8e%a7%e5%88%b6%e5%8f%82%e6%95%b0" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>控制参数分为控制命令、数字输出端子控制、模拟输出AO1控制、模拟输出AO2控制、高速脉冲（FMP）输出控制。</p>
+<h3>8.2.5 控制命令<span class="absolute -mt-20" id="825-控制命令"></span>
+    <a href="#825-%e6%8e%a7%e5%88%b6%e5%91%bd%e4%bb%a4" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在P0-02（命令源）选择为2：通讯控制时，上位机通过该通讯地址，可以实现对变频器的启停等相关命令控制，控制命令定义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">控制命令通讯地址</th>
+<th style="text-align:left">命令功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2000H</td>
+<td style="text-align:left">1：正转运行 </br>2：反转运行 </br>3：正转点动 </br>4：反转点动 </br>5：自由停机 </br>6：减速停机 </br>7：故障复位</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2.6 通讯设定值<span class="absolute -mt-20" id="826-通讯设定值"></span>
+    <a href="#826-%e9%80%9a%e8%ae%af%e8%ae%be%e5%ae%9a%e5%80%bc" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>通讯设定值主要用于中频率源、转矩上限源、VF分离电压源、PID给定源、PID反馈源等选择为通讯给定时的给定数据，其通讯地址为1000H，上位机设定该通讯地址值时，其数据范围为-10000～10000，对应相对给定值-100.00%-100.00%.</p>
+<h3>8.2.7 数字输出端子控制<span class="absolute -mt-20" id="827-数字输出端子控制"></span>
+    <a href="#827-%e6%95%b0%e5%ad%97%e8%be%93%e5%87%ba%e7%ab%af%e5%ad%90%e6%8e%a7%e5%88%b6" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>当数字输出端子功能选择为20：通讯控制时，上位机通过该通讯地址，可以实现对变频器数字输出端子的控制，定义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数字输出端子控制通讯地址</th>
+<th style="text-align:left">命令内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2001H</td>
+<td style="text-align:left">BiT0：DO1输出控制 </br>BiT1：DO2输出控制 </br>BiT2：RELAY1输出控制 </br>BiT3：RELAY2输出控制 </br>BiT4：FMR输出控制</br>BiT5：VDO1 </br>BiT6：VDO2 </br>BiT7：VDO3 </br>BiT8：VDO4 </br>BiT9：VDO5</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2.8 模拟量输出AO1、AO2.高速脉冲输出FMP控制<span class="absolute -mt-20" id="828-模拟量输出ao1ao2高速脉冲输出fmp控制"></span>
+    <a href="#828-%e6%a8%a1%e6%8b%9f%e9%87%8f%e8%be%93%e5%87%baao1ao2%e9%ab%98%e9%80%9f%e8%84%89%e5%86%b2%e8%be%93%e5%87%bafmp%e6%8e%a7%e5%88%b6" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>当模拟量输出AO1、AO2，高速脉冲输出FMP输出功能选择为12：通讯设定时，上位机通过该通讯地址，可以实现对变频器模拟量、高速脉冲输出的控制，定义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">输出端子</th>
+<th style="text-align:center">输出控制通讯地址</th>
+<th style="text-align:center">命令内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AO1</td>
+<td style="text-align:center">2002H</td>
+<td style="text-align:center">0～7FFF表示0%～100%</td>
+</tr>
+<tr>
+<td style="text-align:center">AO2</td>
+<td style="text-align:center">2003H</td>
+<td style="text-align:center">0～7FFF表示0%～100%</td>
+</tr>
+<tr>
+<td style="text-align:center">FMP</td>
+<td style="text-align:center">2004H</td>
+<td style="text-align:center">0～7FFF表示0%～100%</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2.9 参数初始化<span class="absolute -mt-20" id="829-参数初始化"></span>
+    <a href="#829-%e5%8f%82%e6%95%b0%e5%88%9d%e5%a7%8b%e5%8c%96" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>当需要通过上位机实现对变频器的参数初始化操作时，需要使用该功能。
+如果PP-00（用户密码）不为0，则首先需要通过进行密码校验，校验通过后，在30秒后，上位机进行参数初始化操作。<br>
+通讯进行用户密码校验的通讯地址为1F00H，直接将正确的用户密码写入该地址，则可以完成密码校验。<br>
+通讯进行参数初始化的地址为1F01H，其数据内容定义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数初始化通讯地址</th>
+<th style="text-align:left">命令功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1F01H</td>
+<td style="text-align:left">1：恢复出厂参数 </br>2：清楚记录信息 </br>4：恢复用户备份参数 </br>501：备份用户当前参数</td>
+</tr>
+</tbody>
+</table>
+<p>探索以下文档以便了解更多内容：</p>
+<div class="hextra-cards mt-4 gap-4 grid not-prose" style="--rows: 3;">
+  <a
+    class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"href="/docs/product-information/technical-specifications-table/" ><span class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>5.1 基本功能参数简表</span></a>
+ <a
+   class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"href="https://item.taobao.com/item.htm?ft=t&amp;id=771441899583" target="_blank" rel="noreferrer"><span class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>立即购买</span></a>
+  <a
+    class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"href="/blog/faq/" ><span class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>变频器常见问题解答</span></a>
+
+</div>
+        </div>
+        <div class="mt-16"></div>
+        <div class="mb-8 flex items-center border-t pt-8 dark:border-neutral-800 contrast-more:border-neutral-400 dark:contrast-more:border-neutral-400 print:hidden"><a
+        href="/docs/modbus-communication-protocol/agreement-content/"
+        title="8.1 协议内容"
+        class="flex max-w-[50%] items-center gap-1 py-4 text-base font-medium text-gray-600 transition-colors [word-break:break-word] hover:text-primary-600 dark:text-gray-300 md:text-lg ltr:pr-4 rtl:pl-4"
+      ><svg class="inline h-5 shrink-0 ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>8.1 协议内容</a><a
+        href="/docs/warranty-instructions/"
+        title="保修说明"
+        class="flex max-w-[50%] items-center gap-1 py-4 text-base font-medium text-gray-600 transition-colors [word-break:break-word] hover:text-primary-600 dark:text-gray-300 md:text-lg ltr:ml-auto ltr:pl-4 ltr:text-right rtl:mr-auto rtl:pr-4 rtl:text-left"
+      >保修说明<svg class="inline h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer bg-gray-100 pb-[env(safe-area-inset-bottom)] dark:bg-neutral-900 print:bg-transparent"><div
+    class="max-w-screen-xl mx-auto flex justify-center py-12 pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)] text-gray-600 dark:text-gray-400 md:justify-start"
+  >
+    <div class="flex w-full flex-col items-center sm:items-start">
+      <div class="font-semibold">变频器厂家,变频器设置,变频器知识,变频器问答,变频器参数,变频器故障,变频器说明书</div><div class="mt-6 text-xs">Copyright © 2016-2024 山东临沂森阔机电有限公司 版权所有　备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">鲁ICP备17034385号-2</a></div>
+    </div>
+  </div>
+</footer>
+    
+  </body>
+  <script defer src="/js/main.min.5250a01f9a9cabefdb65e77efc7c04221397882cded9c5c058a5504e730b11b3.js" integrity="sha256-UlCgH5qcq&#43;/bZed&#43;/HwEIhOXiCze2cXAWKVQTnMLEbM="></script>
+
+
+<script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
+    <script defer src="/zh-cn.search.min.93b3e40a778092685b7ab437ade443a84d44572aa24c83aea013b58514429928.js" integrity="sha256-k7PkCneAkmhberQ3reRDqE1EVyqiTIOuoBO1hRRCmSg="></script>
+
+
+</html>
